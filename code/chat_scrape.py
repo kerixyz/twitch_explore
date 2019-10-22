@@ -5,13 +5,13 @@ from emoji import demojize
 logging.basicConfig(level = logging.DEBUG,
                     format = '%(asctime)s - %(message)s',
                     datefmt = '%Y-%m-%d_%H:%M:%S',
-                    handlers = [logging.FileHandler('2019-streamer-chat.log', encoding = 'utf-8')])
+                    handlers = [logging.FileHandler('../logs/102219-loeya-chat.log', encoding = 'utf-8')])
 
 server = 'irc.chat.twitch.tv'
 port = 6667
 nickname = 'Kxree'
-token = ''
-channel = '#streamer'
+token = 'oauth:8q3kbk4it7gis5wphcnublfc321yzy'
+channel = '#loeya'
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
 
     try:
         while True:
-            r = sock.recv(2048).decode('utf-8')
+            r = s.recv(2048).decode('utf-8')
             print(r)
 
             if r.startswith('PING'):
